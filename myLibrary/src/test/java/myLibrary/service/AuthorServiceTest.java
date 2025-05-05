@@ -30,7 +30,7 @@ public class AuthorServiceTest {
     public void setUp() {
         testAuthor = new Author();
         testAuthor.setId(1L);
-        testAuthor.setName("Arya");
+        testAuthor.setName("Aarya");
 
         when(authorRepository.findAll()).thenReturn(List.of(testAuthor));
         when(authorRepository.findById(1L)).thenReturn(Optional.of(testAuthor));
@@ -47,7 +47,7 @@ public class AuthorServiceTest {
     public void testGetAuthorById() {
         Optional<Author> author = authorService.getAuthorById(1L);
         assertTrue(author.isPresent());
-        assertEquals("Arya", author.get().getName());
+        assertEquals("Aarya", author.get().getName());
     }
 
     @Test
